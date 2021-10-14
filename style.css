@@ -2,9 +2,30 @@
     font-family:
   } */
 
+#configurator {
+  display: grid;
+  grid-template-columns: 65vw 25vw;
+  grid-template-rows: 55vh 30vh;
+  grid-template-areas:
+    "preview options"
+    "colors features";
+  gap: 1rem;
+}
+
+#preview {
+  grid-area: preview;
+  box-shadow: 3px 3px 8px #ddd;
+  border-radius: 1rem;
+  position: relative;
+}
+
 #preview svg {
-  width: 100%;
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  width: 70%;
   height: auto;
+  pointer-events: none;
 }
 
 #preview g {
@@ -18,4 +39,40 @@
 
 path {
   stroke-width: 2;
+}
+
+#options {
+  grid-area: options;
+  box-shadow: 3px 3px 8px #ddd;
+  border-radius: 1rem;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#selected {
+  grid-area: features;
+  box-shadow: 3px 3px 8px #ddd;
+  border-radius: 1rem;
+  padding: 1em;
+}
+
+#colors {
+  grid-area: colors;
+  box-shadow: 3px 3px 8px #ddd;
+  border-radius: 1rem;
+  padding: 1em;
+}
+
+.color-button {
+  cursor: pointer;
+}
+
+.color-button:hover {
+  opacity: 0.8;
+}
+
+#pillows {
+  z-index: 2;
 }
