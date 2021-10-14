@@ -1,0 +1,21 @@
+/* :root {
+    font-family:
+  } */
+
+#preview svg {
+  width: 100%;
+  height: auto;
+}
+
+#preview g {
+  pointer-events: all;
+}
+
+.addColor {
+  fill: transparent;
+  cursor: pointer;
+}
+
+path {
+  stroke-width: 2;
+}
