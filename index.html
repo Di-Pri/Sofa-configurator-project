@@ -7,34 +7,61 @@
     <meta name="robots" content="noindex" />
     <title>Sofa configurator</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="#" />
   </head>
   <body>
     <h1>Sofa configurator</h1>
 
     <div id="configurator">
       <div id="preview">
+        <img src="images/feature-juice.png" alt="" class="hide" data-feature="juice" />
+        <img src="images/feature-pillows.png" alt="" class="hide" data-feature="pillow" />
+        <img src="images/feature-cat.png" alt="" class="hide" data-feature="cat" />
+        <img src="images/feature-pattern.png" alt="" class="hide" data-feature="pattern" />
         <div id="sofa"></div>
       </div>
-      <div id="colors">
-        <p>Available colors</p>
 
+      <div id="colors">
+        <h2>Available colors</h2>
         <svg id="colorsContainer" viewBox="0 0 500 50">
-          <rect class="color-button" x="0" width="30" height="30" fill="#e0b29a" />
-          <rect class="color-button" x="40" width="30" height="30" fill="#b8ceac" />
-          <rect class="color-button" x="80" width="30" height="30" fill="#c2acce" />
-          <rect class="color-button" x="120" width="30" height="30" fill="#9dc4bc" />
-          <rect class="color-button" x="160" width="30" height="30" fill="#9da6c4" />
-          <rect class="color-button" x="200" width="30" height="30" fill="#2e2828" />
-          <rect class="color-button" x="240" width="30" height="30" fill="#25253e" />
-          <rect class="color-button" x="280" width="30" height="30" fill="#d8d8b4" />
+          <rect class="color-button" x="0" width="35" height="25" fill="#ab5e2b" />
+          <rect class="color-button" x="42" width="35" height="25" fill="#403a37" />
+          <rect class="color-button" x="84" width="35" height="25" fill="#c2acce" />
+          <rect class="color-button" x="126" width="35" height="25" fill="#213b5c" />
+          <rect class="color-button" x="168" width="35" height="25" fill="#9da6c4" />
+          <rect class="color-button" x="210" width="35" height="25" fill="#d9c232" />
+          <rect class="color-button" x="252" width="35" height="25" fill="#25253e" />
+          <rect class="color-button" x="294" width="35" height="25" fill="#e3e3e3" />
+          <rect class="color-button" x="336" width="35" height="25" fill="#7d2323" />
+          <rect class="color-button" x="378" width="35" height="25" fill="#405e3a" />
+          <rect class="color-button" x="420" width="35" height="25" fill="#5b7b8c" />
+          <rect class="color-button" x="462" width="35" height="25" fill="#232e32" />
         </svg>
       </div>
-      <div id="options">Available features</div>
+
+      <div id="options">
+        <h2>Available features</h2>
+        <figure class="option" data-feature="pillow">
+          <img src="images/pillow.png" alt="Pillows" />
+          <figcaption>Pillows</figcaption>
+        </figure>
+        <figure class="option" data-feature="pattern">
+          <img src="images/pattern.png" alt="Pattern" />
+          <figcaption>Pattern</figcaption>
+        </figure>
+        <figure class="option" data-feature="juice">
+          <img src="images/juice.png" alt="Juice" />
+          <figcaption>Juice</figcaption>
+        </figure>
+        <figure class="option" data-feature="cat">
+          <img src="images/cat.png" alt="Cat" />
+          <figcaption>Cat</figcaption>
+        </figure>
+      </div>
+
       <div id="selected">
-        Selected features
-        <ul>
-          <!-- featureElements are added here! -->
-        </ul>
+        <h2>Selected features</h2>
+        <ul></ul>
       </div>
     </div>
 

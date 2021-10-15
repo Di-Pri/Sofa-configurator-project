@@ -1,31 +1,56 @@
-/* :root {
-    font-family:
-  } */
+@import url("https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600&display=swap");
+:root {
+  --box-shadow: 0 0 6px 1px #999a9b;
+}
+
+body {
+  font-family: "Signika", sans-serif;
+  color: #071923;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  background-color: #aabba4;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
 
 #configurator {
   display: grid;
   grid-template-columns: 65vw 25vw;
-  grid-template-rows: 55vh 30vh;
   grid-template-areas:
     "preview options"
     "colors features";
   gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 #preview {
   grid-area: preview;
-  box-shadow: 3px 3px 8px #ddd;
-  border-radius: 1rem;
   position: relative;
+}
+
+#preview img {
+  position: absolute;
+  pointer-events: none;
+  z-index: 15;
+  width: 80%;
+  left: 0;
+  right: 0;
+  margin: 3.5rem auto;
 }
 
 #preview svg {
   position: absolute;
-  top: 3rem;
-  left: 3rem;
-  width: 70%;
-  height: auto;
+  width: 80%;
   pointer-events: none;
+  left: 0;
+  right: 0;
+  margin: 3.5rem auto;
 }
 
 #preview g {
@@ -38,31 +63,69 @@
 }
 
 path {
-  stroke-width: 2;
+  stroke-width: 3;
+}
+
+#preview .hide {
+  opacity: 0;
 }
 
 #options {
   grid-area: options;
-  box-shadow: 3px 3px 8px #ddd;
-  border-radius: 1rem;
-  padding: 1em;
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+}
+
+#options .option {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  height: 3.3rem;
+}
+
+#options .option:hover {
+  color: grey;
+  cursor: pointer;
+}
+
+#options .option.chosen {
+  text-decoration: underline;
+}
+
+#options .option img {
+  width: 3rem;
+}
+
+#options .option figcaption {
+  font-size: 19px;
 }
 
 #selected {
   grid-area: features;
-  box-shadow: 3px 3px 8px #ddd;
-  border-radius: 1rem;
-  padding: 1em;
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+}
+
+#selected ul li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+#selected ul li img {
+  width: 3rem;
 }
 
 #colors {
   grid-area: colors;
-  box-shadow: 3px 3px 8px #ddd;
-  border-radius: 1rem;
-  padding: 1em;
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+#colors svg {
+  margin-top: 0.5rem;
 }
 
 .color-button {
@@ -70,9 +133,38 @@ path {
 }
 
 .color-button:hover {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
-#pillows {
-  z-index: 2;
+.animateIn {
+  animation: animate 1s ease-in 1;
+}
+
+.animateOut {
+  animation: animate 1s ease-out reverse 1;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(calc(var(--xdiff) * 1px), calc(var(--ydiff) * 1px));
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  #configurator {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #colors {
+    margin-top: 50%;
+  }
 }
