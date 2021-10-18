@@ -5,7 +5,10 @@ window.addEventListener("DOMContentLoaded", start);
 let elementToPaint;
 
 const features = {
-  glasses: false,
+  juice: false,
+  cat: false,
+  pattern: false,
+  pillow: false,
 };
 
 async function start() {
@@ -20,7 +23,7 @@ async function start() {
 function userInteraction() {
   document.querySelectorAll(".addColor").forEach((g) => {
     console.log(g);
-    g.addEventListener("click", pathClicked);
+    g.addEventListener("click", gClicked);
     g.addEventListener("mouseover", pathMouseover);
     g.addEventListener("mouseout", pathMouseout);
   });
@@ -30,11 +33,23 @@ function userInteraction() {
   });
 }
 
-function pathClicked() {
-  elementToPaint = this;
-  console.log(this);
-  this.style.fill = "black";
-  this.style.opacity = "0.5";
+function gClicked(e) {
+  document.querySelectorAll(".addColor").forEach((g) => {
+    g.classList.remove("black");
+    e.stopPropagation();
+    window.addEventListener("click", (e) => {
+      g.classList.remove("black");
+    });
+  });
+
+  pathClicked(this);
+}
+
+function pathClicked(path) {
+  elementToPaint = path;
+  console.log(path);
+  path.classList.add("black");
+  path.style.opacity = "0.5";
 }
 
 function pathMouseover() {
@@ -46,7 +61,7 @@ function pathMouseout() {
 }
 
 function colorClicked() {
-  if (elementToPaint != undefined) {
+  if (elementToPaint !== undefined) {
     elementToPaint.style.fill = this.getAttribute("fill");
   }
 }
