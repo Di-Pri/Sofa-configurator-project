@@ -12,7 +12,7 @@ const features = {
 };
 
 async function start() {
-  let response = await fetch("sofa.svg");
+  let response = await fetch("sofa-main.svg");
   let svgData = await response.text();
   document.querySelector("#sofa").innerHTML = svgData;
   document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
