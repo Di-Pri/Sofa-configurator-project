@@ -1,0 +1,1 @@
+In this product configurator, you can design your own sofa by choosing your preferred colors for the sofa body, cushions, and legs. In addition, you can add extra features to the product, such as large cushions, glasses and... a cat.
