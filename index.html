@@ -21,8 +21,8 @@
         <div id="sofa"></div>
       </div>
 
-      <div id="colors">
-        <h2>Available colors</h2>
+      <div id="colors" class="hidden">
+        <h2>Choose color</h2>
         <svg id="colorsContainer" viewBox="0 0 500 50">
           <rect class="color-button" x="0" width="35" height="25" fill="#ab5e2b" />
           <rect class="color-button" x="42" width="35" height="25" fill="#403a37" />
@@ -39,8 +39,8 @@
         </svg>
       </div>
 
-      <div id="options">
-        <h2>Available features</h2>
+      <div id="options" class="hidden">
+        <h2>Select features</h2>
         <figure class="option" data-feature="pillow">
           <img src="images/pillow.png" alt="Pillows" />
           <figcaption>Pillows</figcaption>
@@ -59,12 +59,12 @@
         </figure>
       </div>
 
-      <div id="selected">
+      <div id="selected" class="hidden">
         <h2>Selected features</h2>
         <ul></ul>
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

@@ -1,4 +1,5 @@
 "use strict";
+import { showcase } from "./landing.js";
 
 window.addEventListener("DOMContentLoaded", start);
 
@@ -15,9 +16,12 @@ async function start() {
   let response = await fetch("sofa-main.svg");
   let svgData = await response.text();
   document.querySelector("#sofa").innerHTML = svgData;
-  document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
 
-  userInteraction();
+  showcase();
+  setTimeout(function () {
+    userInteraction();
+    document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
+  }, 4000);
 }
 
 function userInteraction() {
@@ -26,6 +30,7 @@ function userInteraction() {
     g.addEventListener("click", gClicked);
     g.addEventListener("mouseover", pathMouseover);
     g.addEventListener("mouseout", pathMouseout);
+    g.style.pointerEvents = "all";
   });
 
   document.querySelectorAll(".color-button").forEach((button) => {
@@ -35,10 +40,14 @@ function userInteraction() {
 
 function gClicked(e) {
   document.querySelectorAll(".addColor").forEach((g) => {
-    g.classList.remove("black");
+    if (g.style.fill === "black") {
+      g.style.fill = "none";
+    }
     e.stopPropagation();
     window.addEventListener("click", (e) => {
-      g.classList.remove("black");
+      if (g.style.fill === "black") {
+        g.style.fill = "none";
+      }
     });
   });
 
@@ -48,7 +57,9 @@ function gClicked(e) {
 function pathClicked(path) {
   elementToPaint = path;
   console.log(path);
-  path.classList.add("black");
+  if (path.style.fill === "none") {
+    path.style.fill = "black";
+  }
   path.style.opacity = "0.5";
 }
 
@@ -71,7 +82,12 @@ function toggleOption(event) {
   const feature = target.dataset.feature;
 
   // Toggle feature added
-  features[feature] = !features[feature];
+
+  if (features[feature] === false) {
+    features[feature] = true;
+  } else {
+    features[feature] = false;
+  }
 
   if (features[feature]) {
     target.classList.add("chosen");
@@ -81,6 +97,7 @@ function toggleOption(event) {
     });
 
     // Created li and appended to selected ul
+
     const featureElement = createFeatureElement(feature);
     document.querySelector("#selected ul").append(featureElement);
 
