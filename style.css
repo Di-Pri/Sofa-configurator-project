@@ -83,6 +83,8 @@ path {
   align-items: center;
   gap: 3rem;
   height: 3.3rem;
+  padding-right: 0.5rem;
+  margin-right: auto;
 }
 
 #options .option.chosen {
@@ -177,10 +179,30 @@ path {
   }
 }
 
+footer p {
+  color: #a6afaa;
+  text-align: center;
+  margin: 2rem 1rem 1rem 1rem;
+}
+
 .hidden {
   opacity: 0;
   pointer-events: none;
 }
+
+/* Remove scrollbar starts */
+
+body {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Remove scrollbar ends */
 
 @media screen and (max-width: 900px) {
   h1 {
