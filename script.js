@@ -21,7 +21,7 @@ async function start() {
   setTimeout(function () {
     userInteraction();
     document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
-  }, 4000);
+  }, 5500);
 }
 
 function userInteraction() {

@@ -76,11 +76,67 @@ export function showcase() {
     cat.classList.add("hide");
     pillow.classList.add("hide");
 
-    document.querySelector("#preview").classList.remove("center");
-    document.querySelector("#options").classList.remove("hidden");
+    document.querySelector("#preview").className = "putSofaBack";
     document.querySelector("#colors").classList.remove("hidden");
+    document.querySelector("#options").classList.remove("hidden");
     document.querySelector("#selected").classList.remove("hidden");
 
-    document.body.style.overflow = "visible";
+    document.querySelector("#colors").animate(
+      [
+        {
+          opacity: 0,
+          transform: "translateX(-800px)",
+        },
+        {
+          opacity: 1,
+          transform: "translateX(0)",
+        },
+      ],
+      {
+        duration: 1500,
+        iterations: 1,
+        easing: "ease-out",
+      }
+    );
+
+    document.querySelector("#options").animate(
+      [
+        {
+          opacity: 0,
+          transform: "translateX(400px)",
+        },
+        {
+          opacity: 1,
+          transform: "translateX(0)",
+        },
+      ],
+      {
+        duration: 1500,
+        iterations: 1,
+        easing: "ease-out",
+      }
+    );
+
+    document.querySelector("#selected").animate(
+      [
+        {
+          opacity: 0,
+          transform: "translateY(200px)",
+        },
+        {
+          opacity: 1,
+          transform: "translateY(0)",
+        },
+      ],
+      {
+        duration: 1500,
+        iterations: 1,
+        easing: "ease-out",
+      }
+    );
   }, 4000);
+
+  setTimeout(() => {
+    document.body.style.overflow = "visible";
+  }, 5500);
 }

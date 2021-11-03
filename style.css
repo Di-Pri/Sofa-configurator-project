@@ -137,14 +137,14 @@ path {
 }
 
 .animateIn {
-  animation: animate 1s ease-in 1;
+  animation: moveFeatures 1s ease-in 1;
 }
 
 .animateOut {
-  animation: animate 1s ease-out reverse 1;
+  animation: moveFeatures 1s ease-out reverse 1;
 }
 
-@keyframes animate {
+@keyframes moveFeatures {
   0% {
     transform: translate(calc(var(--xdiff) * 1px), calc(var(--ydiff) * 1px));
   }
@@ -154,15 +154,27 @@ path {
   }
 }
 
-.black {
-  fill: black;
-}
-
 .center {
-  position: absolute;
   top: 27%;
   left: 20%;
   transform: scale(1.2);
+}
+
+.putSofaBack {
+  animation: sofaBack 1.5s ease-out 1;
+}
+
+@keyframes sofaBack {
+  0% {
+    top: 27%;
+    left: 20%;
+    transform: scale(1.2);
+  }
+  100% {
+    top: 0;
+    left: 0;
+    transform: scale(1);
+  }
 }
 
 .hidden {
@@ -185,9 +197,18 @@ path {
   }
 
   .center {
-    position: absolute;
     top: 25vh;
     left: 0;
     transform: scale(1);
+  }
+
+  @keyframes sofaBack {
+    0% {
+      top: 25vh;
+    }
+
+    100% {
+      top: 0;
+    }
   }
 }
