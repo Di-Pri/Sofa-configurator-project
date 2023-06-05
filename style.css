@@ -82,7 +82,7 @@ path {
   display: flex;
   align-items: center;
   gap: 3rem;
-  height: 3.3rem;
+  height: 5rem;
   padding-right: 0.5rem;
   margin-right: auto;
 }
@@ -97,7 +97,7 @@ path {
 }
 
 #options .option img {
-  width: 3rem;
+  width: 3.8rem;
 }
 
 #options .option figcaption {
