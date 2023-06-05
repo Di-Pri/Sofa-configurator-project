@@ -1,18 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap");
 :root {
   --box-shadow: 0 0 6px 1px #999a9b;
 }
 
 body {
-  font-family: "Signika", sans-serif;
-  color: #071923;
+  font-family: "Montserrat", sans-serif;
+  color: #131516;
   margin: 0;
+  background-color: #fafafd;
+  letter-spacing: 0.03rem;
+  font-weight: 500;
 }
 
 h1 {
   text-align: center;
   font-size: 40px;
-  background-color: #aabba4;
+  background-color: #e0e0e6;
   margin-top: 0;
   margin-bottom: 1rem;
   padding: 0.5rem;
@@ -76,6 +79,7 @@ path {
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  font-weight: 600;
 }
 
 #options .option {
@@ -88,11 +92,11 @@ path {
 }
 
 #options .option.chosen {
-  color: #b6cfc1;
+  color: #a1a1a4;
 }
 
 #options .option:hover {
-  color: #74887d;
+  color: #a1a1a4;
   cursor: pointer;
 }
 
@@ -180,9 +184,9 @@ path {
 }
 
 footer p {
+  padding: 1rem;
   color: #a6afaa;
   text-align: center;
-  margin: 2rem 1rem 1rem 1rem;
 }
 
 .hidden {
